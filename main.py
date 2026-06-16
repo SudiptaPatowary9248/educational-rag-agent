@@ -1,3 +1,6 @@
+# adding debugs for prod issue
+print("MAIN.PY IMPORTED")
+
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
@@ -23,7 +26,9 @@ logger = logging.getLogger(__name__)
 
 load_dotenv()
 
+print("CREATING FASTAPI APP")
 app = FastAPI()
+print("FASTAPI APP CREATED")
 
 groq_client = OpenAI(
     api_key=os.getenv("GROQ_API_KEY"),
